@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhD Position – AMISTAD Project | University of Navarra</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F8F4EE;
+    --ivory: #EDE7DC;
+    --dark: #1A1714;
+    --brown: #3D2B1F;
+    --gold: #A8864A;
+    --gold-light: #C9A96E;
+    --rust: #7D4E2D;
+    --muted: #7A6E65;
+    --border: #D6CCBf;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--cream);
+    color: var(--dark);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background-color: var(--cream);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    min-height: 450px;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(90, 106, 63, 0.42) 0%,
+      rgba(176, 145, 72, 0.34) 52%,
+      rgba(145, 115, 82, 0.4) 100%
+    );
+    z-index: 0;
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: var(--brown);
+    z-index: 0;
+  }
+
+  .header-logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url('images/UNAV.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .header-inner {
+    position: relative;
+    z-index: 2;
+    width: 50%;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 3rem;
+    background-color: var(--brown);
+  }
+
+  .institution-line {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .institution-line span {
+    color: var(--gold-light);
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: .72rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+  }
+
+  .institution-line::after {
+    display: none;
+  }
+
+  .badge {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-size: .65rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    padding: .35rem .9rem;
+    margin-bottom: 1.4rem;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    line-height: 1.15;
+    color: #F5EFE6;
+    margin-bottom: .9rem;
+    letter-spacing: .01em;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .header-sub {
+    color: rgba(245,239,230,.55);
+    font-size: .82rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-top: 1.6rem;
+  }
+
+  /* ── DIVIDER ── */
+  .ornament {
+    text-align: center;
+    padding: 2.2rem 3rem 1.6rem;
+    color: var(--gold);
+    font-size: 1.1rem;
+    letter-spacing: .5em;
+  }
+
+  /* ── MAIN ── */
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 0 5rem;
+    position: relative;
+  }
+
+  /* ── META ROW ── */
+  .meta-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin: 0 -3rem 3.5rem;
+    padding: 0 3rem;
+  }
+
+  .meta-cell {
+    padding: 1.4rem 1.2rem;
+    border-right: 1px solid var(--border);
+  }
+
+  .meta-cell:last-child { border-right: none; }
+
+  .meta-label {
+    font-size: .62rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: .35rem;
+    font-weight: 400;
+  }
+
+  .meta-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: var(--brown);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  /* ── SECTIONS ── */
+  section { margin-bottom: 3rem; position: relative; }
+
+  section.bg-image {
+    padding: 2rem;
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+
+  section.bg-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.1215;
+    z-index: 0;
+  }
+
+  section.bg-image > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  section.bg-landscape::before {
+    background-image: url('images/landscape_view.png');
+  }
+
+  section.bg-phd::before {
+    background-image: url('images/phd_view.png');
+  }
+
+  section.bg-students::before {
+    background-image: url('images/students_view.png');
+  }
+
+  section.bg-fall::before {
+    background-image: url('images/fall_view.png');
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.4rem;
+    padding-bottom: .7rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  section.bg-image .section-header {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .section-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: .85rem;
+    color: var(--gold);
+    letter-spacing: .1em;
+    font-weight: 400;
+    flex-shrink: 0;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1.45rem;
+    color: var(--brown);
+    letter-spacing: .01em;
+  }
+
+  p {
+    font-size: .92rem;
+    color: #2E2825;
+    line-height: 1.85;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+  }
+
+  section.bg-image p {
+    padding: 0;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight {
+    background: var(--ivory);
+    border-left: 3px solid var(--gold);
+    padding: 1.4rem 1.6rem;
+    margin: 1.6rem 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .highlight p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.08rem;
+    font-style: italic;
+    color: var(--brown);
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  /* ── WP GRID ── */
+  .wp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 1.6rem 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .wp-cell {
+    background: var(--cream);
+    padding: 1.3rem 1.4rem;
+  }
+
+  .wp-tag {
+    font-size: .62rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+    margin-bottom: .4rem;
+  }
+
+  .wp-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--brown);
+    margin-bottom: .4rem;
+  }
+
+  .wp-desc {
+    font-size: .8rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── LIST ── */
+  ul.styled {
+    list-style: none;
+    padding: 0;
+    margin: 1.2rem 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  ul.styled li {
+    font-size: .9rem;
+    color: #2E2825;
+    line-height: 1.7;
+    padding: .5rem 0 .5rem 1.4rem;
+    border-bottom: 1px dashed var(--border);
+    position: relative;
+  }
+
+  ul.styled li:last-child { border-bottom: none; }
+
+  ul.styled li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: .75rem;
+  }
+
+  /* ── TEAM ── */
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin: 1.4rem 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .team-card {
+    border: 1px solid var(--border);
+    padding: 1.1rem 1.3rem;
+    background: #FDFAF6;
+  }
+
+  .team-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--brown);
+    margin-bottom: .2rem;
+  }
+
+  .team-role {
+    font-size: .72rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: .5rem;
+    font-weight: 400;
+  }
+
+  .team-bio {
+    font-size: .8rem;
+    color: #5A504A;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── CONDITIONS TABLE ── */
+  .conditions {
+    background: var(--ivory);
+    padding: 1.8rem 2rem;
+    margin: 1.4rem 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .condition-row {
+    display: flex;
+    gap: 1.5rem;
+    padding: .75rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: baseline;
+  }
+
+  .condition-row:last-child { border-bottom: none; }
+
+  .cond-label {
+    font-size: .65rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+    min-width: 110px;
+    flex-shrink: 0;
+    margin-top: .15rem;
+  }
+
+  .cond-value {
+    font-size: .88rem;
+    color: #2E2825;
+    line-height: 1.65;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--brown);
+    padding: 2.2rem 3rem;
+    text-align: center;
+  }
+
+  footer p {
+    color: rgba(245,239,230,.45);
+    font-size: .72rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.8;
+  }
+
+  footer strong {
+    color: var(--gold-light);
+    font-weight: 400;
+  }
+
+  /* ── ANIMATION ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate { animation: fadeUp .7s ease both; }
+  .d1 { animation-delay: .1s; }
+  .d2 { animation-delay: .22s; }
+  .d3 { animation-delay: .34s; }
+  .d4 { animation-delay: .46s; }
+
+  @media (max-width: 640px), (hover: none) and (pointer: coarse) {
+    header {
+      display: block;
+      min-height: 0;
+    }
+
+    header::before {
+      width: 100%;
+      height: 36vh;
+      left: 0;
+      top: 0;
+    }
+
+    header::after {
+      width: 100%;
+      height: auto;
+      top: 36vh;
+      bottom: 0;
+      left: 0;
+      right: auto;
+    }
+
+    .header-logo {
+      width: 100%;
+      height: 36vh;
+      background-size: contain;
+    }
+
+    .header-inner {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 36vh;
+      padding: 2rem 1.4rem 2.3rem;
+      background: transparent;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 9vw, 2.8rem);
+    }
+
+    main, .header-inner { padding-left: 1.4rem; padding-right: 1.4rem; }
+    .meta-row, .wp-grid, .team-grid { grid-template-columns: 1fr; }
+    .meta-cell { border-right: none; border-bottom: 1px solid var(--border); }
+    .meta-cell:last-child { border-bottom: none; }
+    main { padding-bottom: 3rem; }
+    section.bg-image { margin-left: -1.4rem; margin-right: -1.4rem; padding: 1.5rem 1.4rem; }
+    p { padding: 0; }
+    section.bg-image p { padding: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-logo" aria-hidden="true"></div>
+  <div class="header-inner">
+    <div class="institution-line animate d1">
+      <span>University of Navarra &nbsp;·&nbsp; Faculty of Communication</span>
+    </div>
+    <div class="badge animate d2">Doctoral Research Opportunity</div>
+    <h1 class="animate d3">
+      The Everyday Social Life of Teachers<br>
+      <em>in a Hyperconnected World</em>
+    </h1>
+    <p class="header-sub animate d4">PhD Position — AMISTAD Research Project &nbsp;·&nbsp; 2025–2029</p>
+  </div>
+</header>
+
+<main>
+  <div class="ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+
+  <div class="meta-row">
+    <div class="meta-cell">
+      <div class="meta-label">Principal Supervisor</div>
+      <div class="meta-value">Dr. Aurelio Fernández</div>
+    </div>
+    <div class="meta-cell">
+      <div class="meta-label">Institution</div>
+      <div class="meta-value">University of Navarra, Spain</div>
+    </div>
+    <div class="meta-cell">
+      <div class="meta-label">Duration</div>
+      <div class="meta-value">3–4 years (conditional on funding)</div>
+    </div>
+  </div>
+
+  <!-- 1. Project Context -->
+  <section class="bg-image bg-landscape">
+    <div class="section-header">
+      <span class="section-num">I.</span>
+      <h2>Project Context &amp; Scientific Background</h2>
+    </div>
+    <p>
+      This doctoral position sits within Project AMISTAD (<em>Adaptive Mechanisms Influencing Socializing and Time Alone in Daily-life</em>), a research initiative funded under the PIUNA Strategy 25–30 at the University of Navarra. AMISTAD investigates how the quality and balance of everyday social interaction and solitude shape individuals' experience of loneliness in contemporary, digitalized societies.
+    </p>
+    <p>
+      Loneliness has become a pressing public health concern, with nearly one in four Spanish adults reporting frequent loneliness. Paradoxically, this rise coincides with an unprecedented expansion of opportunities for social connection. AMISTAD addresses this paradox by shifting focus from the <em>quantity</em> to the <em>quality and contextual fit</em> of everyday social and solitude experiences, examining how digital media, physical environments, and individual differences moderate these dynamics.
+    </p>
+    <div class="highlight">
+      <p>"Loneliness does not primarily stem from insufficient social contact, but from a mismatch between an individual's social needs and how they experience and balance social interaction and solitude in everyday life."</p>
+    </div>
+    <p>
+      The project employs a rigorous multi-wave experience sampling methodology (ESM) combined with passive smartphone sensing, collecting over 70,000 real-time reports from nationally representative adult samples across Spain. It brings together expertise in interpersonal communication, social psychology, neuroarchitecture, and film aesthetics.
+    </p>
+  </section>
+
+  <!-- 2. Doctoral Specialisation -->
+  <section class="bg-image bg-phd">
+    <div class="section-header">
+      <span class="section-num">II.</span>
+      <h2>Doctoral Specialisation: Teachers as a Study Population</h2>
+    </div>
+    <p>
+      This specific doctoral project adapts the AMISTAD framework to focus on <strong>schoolteachers</strong> as its primary study population — a group of exceptional theoretical and societal relevance. Teaching is among the most emotionally and psychologically demanding professions: teachers invest considerable social and emotional energy in their daily interactions with students, colleagues, and families, while simultaneously being required to maintain high levels of psychological stability and resilience.
+    </p>
+    <p>
+      This combination makes teachers an ideal population through which to examine the dynamics of the social-solitude balance. Their professional context creates unique pressures on everyday social experience — high-frequency, emotionally charged interactions, limited opportunities for restorative solitude during working hours, and the increasing intrusion of digital communication across professional and personal boundaries.
+    </p>
+    <ul class="styled">
+      <li>Teachers experience structurally high social demands, making the social-solitude balance particularly salient and consequential for their well-being.</li>
+      <li>The school environment provides a rich context for examining how physical spaces (classrooms, shared areas) mediate social experience and solitude quality.</li>
+      <li>Digital connectivity — e-mail, messaging apps, learning platforms — continuously reshapes the boundaries between professional interaction and private recovery time.</li>
+      <li>Findings will yield directly applicable insights for educational policy, workplace well-being programmes, and loneliness prevention strategies.</li>
+    </ul>
+  </section>
+
+  <!-- 3. Research Objectives -->
+  <section>
+    <div class="section-header">
+      <span class="section-num">III.</span>
+      <h2>Research Objectives &amp; Work Plan</h2>
+    </div>
+    <p>
+      The dissertation will address four principal research objectives, mirroring the broader AMISTAD structure while situating all inquiry within the professional and personal life of teachers:
+    </p>
+    <div class="wp-grid">
+      <div class="wp-cell">
+        <div class="wp-tag">WP 1</div>
+        <div class="wp-title">Social–Solitude Balance</div>
+        <p class="wp-desc">Modelling the frequency, quality, and transitions between social interaction and solitude in teachers' daily lives, and their effect on momentary and cumulative loneliness.</p>
+      </div>
+      <div class="wp-cell">
+        <div class="wp-tag">WP 2</div>
+        <div class="wp-title">Digital Media Use</div>
+        <p class="wp-desc">Examining how smartphone and digital platform use moderates social and solitude experiences, their quality, fit, and balance in a teaching context.</p>
+      </div>
+      <div class="wp-cell">
+        <div class="wp-tag">WP 3</div>
+        <div class="wp-title">Physical Environments</div>
+        <p class="wp-desc">Investigating how school and home spatial conditions (lighting, acoustics, biophilic elements) shape opportunities for restorative solitude and quality social engagement.</p>
+      </div>
+      <div class="wp-cell">
+        <div class="wp-tag">WP 4</div>
+        <div class="wp-title">Individual Differences</div>
+        <p class="wp-desc">Exploring how career stage, household composition, and personal characteristics moderate the social-solitude balance and susceptibility to loneliness among teachers.</p>
+      </div>
+    </div>
+    <p>
+      The methodology will employ the same experience sampling procedure as AMISTAD, adapted for teacher samples: a 15-minute baseline survey followed by a two-week ESM period with five semi-random daily prompts, passive smartphone log data, and end-of-day surveys. The doctoral student will have direct access to established partnerships with Netquest (fieldwork) and Avicenna (ESM software), as well as the broader AMISTAD data infrastructure.
+    </p>
+  </section>
+
+  <!-- 4. Academic Outputs -->
+  <section>
+    <div class="section-header">
+      <span class="section-num">IV.</span>
+      <h2>Expected Academic Outputs</h2>
+    </div>
+    <p>
+      The dissertation will comprise a minimum of three peer-reviewed empirical articles, submitted to high-impact journals across education, social psychology, and interpersonal communication. The following outlets are envisaged as primary submission targets, in line with the scientific quality standards already established by the research group:
+    </p>
+    <ul class="styled">
+      <li><em>Journal of Educational Psychology</em> or <em>Teaching and Teacher Education</em> — for findings specific to the teaching population and their professional well-being.</li>
+      <li><em>Journal of Personality and Social Psychology</em> or <em>Social Psychological and Personality Science</em> — for contributions to the broader social-solitude balance literature.</li>
+      <li><em>Human Communication Research</em> or <em>Journal of Communication</em> — for work on digital media moderation and interpersonal dynamics.</li>
+    </ul>
+    <p>
+      All articles will be pre-registered on the Open Science Framework (OSF) prior to data collection. Data and analysis code will be made publicly available upon publication, in keeping with the open science principles of the AMISTAD project. Results will be presented at leading international conferences, including the <em>International Communication Association</em> (ICA) and the <em>Society for Personality and Social Psychology</em> (SPSP), as well as education-focused conferences as appropriate.
+    </p>
+  </section>
+
+  <!-- 5. Supervision & Academic Network -->
+  <section class="bg-image bg-students">
+    <div class="section-header">
+      <span class="section-num">V.</span>
+      <h2>Supervisory Team &amp; Academic Network</h2>
+    </div>
+    <p>
+      The doctoral candidate will benefit from close, structured supervision and full integration into an active research group of four to five investigators. Supervision will be provided by a multidisciplinary team with complementary expertise:
+    </p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-name">Dr. Aurelio Fernández</div>
+        <div class="team-role">Principal Supervisor · University of Navarra</div>
+        <p class="team-bio">Expert in everyday social interactions, experience sampling methodology, and loneliness. Principal Investigator of Project AMISTAD.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-name">Prof. Concepción Naval</div>
+        <div class="team-role">Co-Supervisor · University of Navarra</div>
+        <p class="team-bio">Distinguished scholar in education, civic formation, and teacher professional development. Provides disciplinary grounding in educational science.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-name">Prof. Netta Weinstein</div>
+        <div class="team-role">International Co-Supervisor · University of Reading</div>
+        <p class="team-bio">ERC-funded researcher and leading authority on solitude, autonomous motivation, and psychological well-being. Provides international co-supervision and methodological guidance.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-name">Extended Collaborator Network</div>
+        <div class="team-role">Oxford · Stanford · Ghent · Ohio State · Zurich</div>
+        <p class="team-bio">The project maintains established collaborations with internationally recognised scholars, offering the doctoral student access to a broad academic network and comparative perspectives.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Conditions -->
+  <section>
+    <div class="section-header">
+      <span class="section-num">VI.</span>
+      <h2>Terms &amp; Conditions of Appointment</h2>
+    </div>
+    <div class="conditions">
+      <div class="condition-row">
+        <span class="cond-label">Duration</span>
+        <span class="cond-value">Four years if external funding is secured; three years otherwise. A three-year completion timeline is considered fully achievable given the candidate's profile and the structured guidance offered.</span>
+      </div>
+      <div class="condition-row">
+        <span class="cond-label">Dedication</span>
+        <span class="cond-value">Approximately five hours of focused doctoral work per day, allowing the candidate to maintain parallel professional commitments. Workload will fluctuate across phases of the project, with intensive periods during data collection, conference presentations, and article submission.</span>
+      </div>
+      <div class="condition-row">
+        <span class="cond-label">Funding</span>
+        <span class="cond-value">Application for an ADA Scholarship at the University of Navarra (approx. €1,500/month) will be jointly pursued. Additional funding sources will be explored, and the supervisory team commits to actively supporting all scholarship applications.</span>
+      </div>
+      <div class="condition-row">
+        <span class="cond-label">Training</span>
+        <span class="cond-value">A structured onboarding plan covering the relevant literature and methodology will be provided from the outset. The candidate will not be expected to navigate the field independently; a guided, progressive pathway has been designed.</span>
+      </div>
+      <div class="condition-row">
+        <span class="cond-label">Environment</span>
+        <span class="cond-value">Full integration into a collaborative research group. The candidate will benefit from a collegial, intellectually stimulating working environment that values both rigour and mutual support.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Candidate Profile -->
+  <section class="bg-image bg-fall">
+    <div class="section-header">
+      <span class="section-num">VII.</span>
+      <h2>Candidate Profile</h2>
+    </div>
+    <p>
+      We seek a doctoral candidate with a strong academic background and a genuine interest in the study of social interaction, well-being, and education. The ideal candidate will bring:
+    </p>
+    <ul class="styled">
+      <li>A Master's degree (or equivalent) in Psychology, Communication, Education, or a related social science discipline.</li>
+      <li>Familiarity with quantitative research methods; prior exposure to multilevel modelling or experience sampling methods is an advantage but not a requirement.</li>
+      <li>Intellectual curiosity, the capacity for sustained independent work, and a collegial disposition.</li>
+      <li>Sufficient proficiency in English to engage with the international literature and collaborate within the project network.</li>
+      <li>A commitment to open science practices and rigorous, transparent research.</li>
+    </ul>
+    <div class="highlight">
+      <p>The supervisory team particularly values candidates who combine analytical rigour with a genuine motivation to produce research that speaks to real social challenges — and who bring the professional experience and maturity to enrich the research group.</p>
+    </div>
+  </section>
+
+  <!-- 8. How to Apply -->
+  <section>
+    <div class="section-header">
+      <span class="section-num">VIII.</span>
+      <h2>Expressions of Interest</h2>
+    </div>
+    <p>
+      Candidates are invited to direct any questions or expressions of interest to Dr. Aurelio Fernández at the Faculty of Communication, University of Navarra. Initial enquiries should include a brief statement of motivation and a current curriculum vitae.
+    </p>
+    <p>
+      Formal applications will be processed through the University of Navarra's doctoral admissions procedure. The supervisory team will communicate all relevant deadlines and requirements to shortlisted candidates.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    <strong>University of Navarra</strong> &nbsp;·&nbsp; Faculty of Communication<br>
+    Campus Universitario &nbsp;·&nbsp; 31009 Pamplona, Spain<br>
+    Project AMISTAD &nbsp;·&nbsp; PIUNA Strategy 25–30
+  </p>
+</footer>
+
+</body>
+</html>
