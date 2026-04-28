@@ -4,12 +4,12 @@ Landing page estatica para presentar una oferta de doctorado del proyecto AMISTA
 
 ## Contenido
 
-- `main.html`: pagina principal
+- `index.html`: pagina principal
 - `images/`: recursos visuales (logo y fondos)
 
 ## Ver localmente
 
-1. Abre `main.html` en tu navegador.
+1. Abre `index.html` en tu navegador.
 
 ## Publicacion web
 
